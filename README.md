@@ -17,19 +17,27 @@ The system contains two main microservices:
 ## Architecture
 
 ```
-                +--------------------+
-                |   Eureka Server    |
-                | (Service Registry) |
-                +---------+----------+
-                          |
-        -----------------------------------------
-        |                                       |
-+---------------+                    +----------------+
-| Customer      |                    | Billing        |
-| Service       |<----OpenFeign----->| Service        |
-|               |                    |                |
-+---------------+                    +----------------+
+                 +----------------------+
+                 |      API Gateway     |
+                 |    (Spring Cloud)    |
+                 +----------+-----------+
+                            |
+             -----------------------------------
+             |                                 |
+      +-------------+                  +-------------+
+      | Customer    |<------Feign----->| Billing     |
+      | Service     |                  | Service     |
+      +-------------+                  +-------------+
+           
 
+                     
+              +--------------+
+              |  Eureka      |
+              | Discovery    |
+              +--------------+
+
+                     
+         
 Database: H2 (in-memory)
 ```
 
