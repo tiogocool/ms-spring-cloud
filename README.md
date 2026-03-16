@@ -49,6 +49,7 @@ Database: H2 (in-memory)
 * Spring Boot
 * Spring Cloud
 * Spring Data JPA
+* API Gateway
 * OpenFeign
 * Eureka Discovery Server
 * H2 Database
